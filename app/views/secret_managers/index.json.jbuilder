@@ -1,0 +1,1 @@
+json.array! @secrets, :id, :where, :who, :what, :when, :description
