@@ -1,0 +1,20 @@
+<table class="table">
+  <thread>
+    <tr>
+      <th>ISBNコード</th><th>書名</th><th>価格</th>
+      <th>出版社</th><th>刊行日</th><th>ダウンロード</th>
+    </tr>
+  </thread>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.isbn %></td>
+      <td><%= book.title %></td>
+      <td><%= book.price %>円</td>
+      <td><%= book.publisher %></td>
+      <td><%= book.pubkished %></td>
+      <td><%= book.dl %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

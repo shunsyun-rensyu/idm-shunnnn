@@ -1,0 +1,2 @@
+class SecretManager < ApplicationRecord
+end

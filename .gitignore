@@ -1,0 +1,11 @@
+# whitelist
+
+*
+!*/
+
+!/app/**
+!/config/**
+!/db/**
+!/lib/**
+
+!/*
