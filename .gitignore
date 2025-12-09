@@ -3,7 +3,9 @@
 *
 !*/
 
+!/.devcontainer/**
 !/app/**
+!/bin/**
 !/config/**
 !/db/**
 !/lib/**
