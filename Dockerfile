@@ -65,3 +65,24 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
+
+# Development stage for local development
+FROM base as dev
+
+# Install development tools
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y git vim curl && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Set development environment variables
+ENV RAILS_ENV="development" \
+    BUNDLE_WITHOUT="production"
+
+# Copy application code
+COPY . .
+
+# Expose development server port
+EXPOSE 3000
+
+# Default command for development
+CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
